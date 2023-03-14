@@ -61,8 +61,8 @@ include("includes/db.php");
     <td><?php echo $row['apellido'] ?></td>
     <td><?php echo $row['edad'] ?></td>
     <td><?php echo $row['email'] ?></td>
-    <td><input class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" value="Editar"></td>
-        <td><input class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" value="Borrar"></td>
+    <td><a href="edit.php?id=<?php echo $row['id']?>" class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" >Editar </td>
+        <td><a href="delete.php?id=<?php echo $row['id']?>" class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" value="Borrar">Borrar</td>
     </tr>
 
         <?php } ?>
