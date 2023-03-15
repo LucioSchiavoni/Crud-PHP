@@ -1,21 +1,25 @@
-<div class="h-full flex center-item justify-center">
+<div class="h-full ">
 <?php
 session_start();
 include("includes/header.php");
 include("includes/db.php");
 ?>
 
-    <div class="mt-20 " >
+    <div  >
 
+</div>
     <?php if(isset($_SESSION['message'])) { ?>
     <div class="text-white text-3xl">
         <?= $_SESSION['message'] ?>
     </div>
         <?php session_unset(); } ?>
 
+<div class="ml-20 mt-4 text-4xl text-accent">
+  <h1>Ingrese sus datos</h1>
+</div>
 <form action="includes/save_task.php" method="POST">
 
-<div class="form control mt-10">
+<div class="form control mt-28">
         <label for="" class="label text-2xl text-white ">Nombre</label>
   <input type="text" name="nombre"  class="rounded input">
         
@@ -40,14 +44,14 @@ include("includes/db.php");
 </div>
 
 </form>
-<div class="flex center-item justify-center ">
+<div class="mt-40 ml-16">
 <table class="table-auto">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Edad</th>
-          <th>Email</th>
+      <th class="decoration-amber-700">Nombre</th>
+      <th class="decoration-amber-700">Apellido</th>
+      <th class="decoration-amber-700">Edad</th>
+          <th class="decoration-amber-700">Email</th>
     </tr>
   </thead>
   <tbody>
@@ -61,8 +65,8 @@ include("includes/db.php");
     <td><?php echo $row['apellido'] ?></td>
     <td><?php echo $row['edad'] ?></td>
     <td><?php echo $row['email'] ?></td>
-    <td><a href="edit.php?id=<?php echo $row['id']?>" class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" >Editar </td>
-        <td><a href="delete.php?id=<?php echo $row['id']?>" class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" value="Borrar">Borrar</td>
+    <td><a href="includes/edit.php?id=<?php echo $row['id']?>" class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" >Editar </td>
+        <td><a href="includes/delete.php?id=<?php echo $row['id']?>" class="btn bg-accent-500 hover:bg-accent-600 w-24 text-2xl" value="Borrar">Borrar</td>
     </tr>
 
         <?php } ?>
